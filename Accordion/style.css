@@ -1,0 +1,55 @@
+/*Accordion*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    display: flex;
+    padding: 5px 0;
+    justify-content: center;
+    height: 100vh;
+}
+.accordion  {
+    width: 400px;
+    height: auto;
+    margin-bottom: 5px;
+}
+.accordion .acc-header {
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+    height: 40px;
+    background: blueviolet;
+    color: #fff;
+    line-height: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+.accordion .acc-header::before {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    transition: .2s linear;
+}
+.accordion .acc-box.active .acc-header::before {
+    transform: rotate(90deg);
+}
+.accordion .acc-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #ddd;
+    transition: .2s linear;
+    padding: 0 10px;
+    margin-bottom: 5px;
+}
+.accordion .acc-box.active .acc-content{
+    height: 100px;
+}
